@@ -5,6 +5,7 @@ import com.msc.game.input.Keyboard;
 import com.msc.game.level.Level;
 import com.msc.game.level.RandomLevel;
 import com.msc.game.entitiy.mob.Player;
+import com.msc.game.level.SpawnLevel;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -41,8 +42,9 @@ public class Game extends Canvas implements Runnable {
         screen = new Screen(width, height);
         frame = new JFrame();
         key = new Keyboard();
-        level = new RandomLevel(64, 64);
-        player = new Player(key);
+        // level = new RandomLevel(64, 64);
+        level = new SpawnLevel("com/msc/game/img/flooring.png");
+        player = new Player(220,200,key);
         addKeyListener(key);
     }
 
